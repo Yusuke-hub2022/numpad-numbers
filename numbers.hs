@@ -28,6 +28,7 @@ colsBusy = [[7,1],
 ------------------
 -- ヘルパー関数
 
+-- リストをn個ずつに分割する
 chop :: Int -> [a] -> [[a]]
 chop _ [] = []
 chop n xs = take n xs : chop n (drop n xs)
