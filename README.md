@@ -55,7 +55,7 @@ ghci> take 100 (interleave [8,9] [0,1,2,3,4,5,6,7])
 ```
 
 何個かずつに分けたい時は chop 関数を使う。以下は8個ずつに分ける例。<br/>
-If you want to divide numbers into seveal pieces, use the chop function. Here is an example of dividing numbers into 8 pieces.
+If you want to divide numbers into seveal pieces, use the _chop_ function. Here is an example of dividing numbers into 8 pieces.
 
 ```bash
 ghci> chop 8 (take 100 allkeys)
@@ -65,7 +65,7 @@ ghci> chop 8 (take 100 allkeys)
 # Note
  
 各関数は無限リストを返すので、take関数を使って必要な数だけ取り出す。<br/>
-Each function returns an infinite list, so use the take function to take out as many as you need.
+Each function returns an infinite list, so use the _take_ function to take out as many as you need.
 
 先頭から100個を取り出す例。<br/>
 An example of take the first 100.
@@ -76,7 +76,7 @@ ghci> take 100 allkeys
 ```
 
 各関数は同じランダム値を返す。そのため他の値が欲しいときは、range 関数で数列の途中を部分的に取り出す。<br/>
-Each function returns the same random numbers, so if you want different numbers, use the range function to extract a portion of the sequence.
+Each function returns the same random numbers, so if you want different numbers, use the _range_ function to extract a portion of the sequence.
 
 101個目から200個目を取り出す例。<br/>
 This is an example of extract numbers 101 through 200.
