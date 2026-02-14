@@ -30,16 +30,16 @@ ghci> take 100 allkeys
 [0,6,5,9,1,8,9,2,7,8,7,3,8,7,6,4,9,7,...]
 ```
 
-縦の列を跨いだ数字。例えば、1の次には4と7以外の数字がくる。<br/>
-Crossing columns. For example, after 1, anything other than 4 or 7 comes.
+テンキーの縦の列を跨いだ数字。例えば、1の次には4と7以外の数字がくる。<br/>
+Crossing numpad columns. For example, after 1, anything other than 4 or 7 comes.
 
 ```bash
 ghci> take 100 crossCols
 [1,6,7,8,9,4,2,6,2,9,5,7,6,7,3,4,8,7,...]
 ```
 
-横の列を跨いだ数字。例えば、1の次には2と3以外の数字がくる。<br/>
-Crossing rows. For example, after 1, anything other than 2 or 3 comes.
+テンキーの横の列を跨いだ数字。例えば、1の次には2と3以外の数字がくる。<br/>
+Crossing numpad rows. For example, after 1, anything other than 2 or 3 comes.
 
 ```bash
 ghci> take 100 crossRows
