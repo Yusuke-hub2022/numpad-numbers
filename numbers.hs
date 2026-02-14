@@ -33,6 +33,10 @@ chop :: Int -> [a] -> [[a]]
 chop _ [] = []
 chop n xs = take n xs : chop n (drop n xs)
 
+-- リストのm個目からn個目までを取り出す。
+range :: Int -> Int -> [a] -> [a]
+range m n xs = drop (m-1) (take n xs)
+
 -- 引数の順序が逆のmod
 mod' :: Int -> Int -> Int
 mod' n x = x `mod` n
