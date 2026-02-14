@@ -43,9 +43,15 @@ rndmIdx n = map (mod' n) (randomRs (0,99) gen)
 otherlines :: Key -> [[Key]] -> [[Key]]
 otherlines k lines = filter (\l -> not (elem k l)) lines
 
--- 2つのリストの中から交互に一つを選ぶ。無限リスト。
-flipline :: ([Key],[Idx]) -> ([Key],[Idx]) -> [Key]
-flipline (xs,(ix:ixs)) (ys,iys) = xs !! ix : flipline (ys,iys) (xs,ixs)
+-- 2つのリストの中から交互に一つランダムに選ぶ。無限リスト。
+interleave :: [Key] -> [Key] -> [Key]
+interleave xs ys = interleave' (xs,ixs) (ys,iys)
+                   where
+                     ixs = rndmIdx (length xs)
+                     iys = rndmIdx (length ys)
+
+interleave' :: ([Key],[Idx]) -> ([Key],[Idx]) -> [Key]
+interleave' (xs,(ix:ixs)) (ys,iys) = xs !! ix : interleave' (ys,iys) (xs,ixs)
 
 -- テンキーの縦や横の列を変えながら数字を出すための関数
 crossline :: [[Key]] -> [Key]
@@ -77,6 +83,7 @@ crossRows :: [Key]
 crossRows = crossline rows
 
 -- 8と9の練習用
-exercise89 = flipline ([8,9], (rndmIdx 2)) ([0,1,2,3,4,5,6,7], (rndmIdx 8))
+--exercise89 = interleave ([8,9], (rndmIdx 2)) ([0,1,2,3,4,5,6,7], (rndmIdx 8))
+exercise89 = interleave [8,9] [0,1,2,3,4,5,6,7]
 
 
