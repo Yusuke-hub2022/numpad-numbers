@@ -88,7 +88,6 @@ crossRows :: [Key]
 crossRows = crossline rows
 
 -- 8と9の練習用
---exercise89 = interleave ([8,9], (rndmIdx 2)) ([0,1,2,3,4,5,6,7], (rndmIdx 8))
 exercise89 = interleave [8,9] [0,1,2,3,4,5,6,7]
 
 
